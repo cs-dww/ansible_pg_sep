@@ -1,11 +1,5 @@
 ---
-- hosts: webservers
-  become: yes
-  vars:
-    server_con: 1024
-    port_num: 9092
-
-  tasks:
+# tasks file for nginx
     - name: "Install the package"
       apt:
         name: nginx
@@ -20,17 +14,10 @@
       template:
         src: nginx.conf.j2
         dest: /etc/nginx/nginx.conf
-      notify: "restart service"  
+      notify: "restart service"
 
     - name: "apply port change"
-      template: 
+      template:
         src: port.j2
         dest: /etc/nginx/sites-enabled/default
-      notify: "restart service" 
-
-  handlers:
-    - name: "restart service"
-      service: 
-        name: nginx
-        state: restarted
-
+      notify: "restart service"

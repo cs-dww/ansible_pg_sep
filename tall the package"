@@ -1,0 +1,5 @@
+[0;1;31m●[0m nginx.service - A high performance web server and a reverse proxy server
+   Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+   Active: [0;1;31mfailed[0m (Result: exit-code) since Sat 2021-10-02 14:44:22 UTC; 2min 22s ago
+  Process: 21416 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; [0;1;31m(code=exited, status=1/FAILURE)[0m
+  Process: 21413 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
